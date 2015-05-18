@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wissen
- * Date: 18.5.2015
- * Time: 10:24
- */
 
 $host = "localhost";
 $dbname = "helpdesk";
