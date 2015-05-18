@@ -1,0 +1,9 @@
+.helpDesk {
+    position: fixed;
+    bottom: 0px;
+    width: 500px;
+    right: 50px;
+}
+.time {
+    font-size: 12px;
+}
