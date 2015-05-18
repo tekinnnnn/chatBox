@@ -1,7 +1,3 @@
-/**
- * Created by wissen on 18.5.2015.
- */
-
 function collapse() {
     $("#collapse").toggleClass("glyphicon-collapse-up");
     $("#helpContent").toggle("slow");
