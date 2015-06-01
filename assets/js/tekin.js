@@ -3,7 +3,6 @@ function collapse() {
     $("#helpContent").toggle("slow");
 }
 
-
 function MesajGonder() {
 
     var message = $('#msg').val().trim();
@@ -12,6 +11,7 @@ function MesajGonder() {
         alert("Mesaj boş gönderilemez");
         $('#msg').focus();
     } else {
+        clearInterval(timer);
         $.ajax({
             type: "POST",
             dataType: "json",
@@ -27,32 +27,9 @@ function MesajGonder() {
         });
     }
     $('#msg').val("");
-
-}
-
-function MesajGonder() {
-
-    var message = $('#msg').val().trim();
-
-    if (message == "") {
-        alert("Mesaj boş gönderilemez");
-        $('#msg').focus();
-    } else {
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "messageBox.php", //Relative or absolute path to response.php file
-            data: $("#form").serialize(),
-            success: function (send) {
-                if (send.return == true) {
-                    //yeniMesajlariGetir();
-                } else {
-                    alert("Mesaj Gönderilemedi");
-                }
-            }
-        });
-    }
-    $('#msg').val("");
+    var timer = setInterval(function () {
+        yeniMesajlariGetir();
+    }, 1000); //1 seconds
 
 }
 

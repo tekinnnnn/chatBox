@@ -27,4 +27,3 @@ if (isset($_POST["msgCount"])) {
 
 echo json_encode($data);
 
-?>
